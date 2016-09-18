@@ -3,7 +3,7 @@
 **Instructions: ** Define each of the following Git concepts.
 
 * What is version control?  Why is it useful?
-Version control is setting up a record of all the changes that are done and is useful when multiple programmers are working on the same project. It helps to make sure things don't get confusing.
+ control is setting up a record of all the changes that are done and is useful when multiple programmers are working on the same project. It helps to make sure things don't get confusing.
 * What is a branch and why would you use one?
 A branch is an offshoot of the master repository. It is used when you want to make changes to code and keep track of the changes
 * What is a commit? What makes a good commit message?
