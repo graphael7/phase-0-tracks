@@ -13,3 +13,28 @@ section#contact-info {
 .smallertext {
 font-size: .8em;
 }
+p {
+    display: none;
+    background-color: yellow;
+    padding: 20px;
+}
+
+section:hover p {
+    display: block;
+
+
+body > h1 {
+	background-color: blue;
+}
+
+/* 
+What does the "Cascading" part of Cascading Style Sheets mean? 
+When there is a conflict between two CSS rules that select the same element, how does your browser decide which rule to use?
+They are applied based on weight and there are four steps to sorting:
+1)Find all declarations whose selectors match a particular element.
+2)Sort these declarations by weight and origin
+3)Sort selectors by specificity
+4)Sort by order specified
+
+
+*/
