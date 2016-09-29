@@ -1,0 +1,30 @@
+.fancy_octopus{
+	position: relative;
+
+}
+
+
+#glasses{
+	
+    position: absolute;
+    left: 160px;
+    top: 230px;
+    
+}
+#octopus{
+	
+    position: absolute;
+    left: 115px;
+    top: 125px;
+    z-index: -1;
+  
+}
+
+#hat{
+	
+    position: absolute;
+    left: 100px;
+    top: 15px;
+    
+}
+
