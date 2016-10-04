@@ -1,0 +1,20 @@
+Release 0
+
+-open door when user calls for elevator
+-Prompt user for the floor that they would like to go to
+-if the floor is a valid floor move elevator to the correct floor
+-if floor is not a valid floor tell user that floor isnt valid and prompt again.
+-once at the desired floor open the door.
+
+Release 1
+
+-get toothbrush
+-get toothpaste
+-put pea sized amount of toothpaste on the toothbrush
+-put toothbrush on teeth and move back and forth for 1 minute
+-move toothbrush up and down for 1 minute
+-rinse toothbrush with water
+-rinse mouth with water
+-dry mouth with towel
+
+
