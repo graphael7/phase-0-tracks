@@ -1,0 +1,28 @@
+header{
+  background-color: gray;
+  
+}
+body{
+  positon: absolute;
+  left: 80px;
+  font-family: helvetica;
+}
+
+.column-1{
+  display:inline-block;
+  width:45%;
+  vertical-align:top;
+   background-color:lightblue;
+   margin-left: 30px;
+}
+.column-2{
+  display:inline-block;
+  width:45%;
+  vertical-align:top;
+  background-color:lightblue;
+  margin-left: 30px;
+  }
+  
+  footer{
+    background-color:red;
+  }
