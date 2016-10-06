@@ -17,6 +17,8 @@
 
 
 
+
+
 def encrypt(user_string)
 	index = 0
 	while index < user_string.length
@@ -30,7 +32,6 @@ def encrypt(user_string)
 	user_string
 end
 	
-puts encrypt("zed")
 
  
 def decrypt(user_string2)
@@ -51,7 +52,27 @@ def decrypt(user_string2)
   	end
   	user_string2
  end
-	
-puts decrypt("afe")
 
-decrypt(encrypt("swordfish")) 
+#puts encrypt("zed")
+#puts decrypt("afe")
+#decrypt(encrypt("swordfish")) 
+
+puts "Would you like to encrypt or decrypt a password?"	
+user_decision = gets.chomp
+puts "What is the password?"
+user_password = gets.chomp
+
+user_input = false 
+
+until user_input
+	if user_decision.upcase == "ENCRYPT"
+		user_input = true 
+		puts "Here is your encrypted password " + encrypt(user_password)
+	elsif user_decision.upcase == "DECRYPT"
+		user_input = true 
+		puts "Here is your decrypted password " + decrypt(user_password)
+	else
+		puts "Encrypt or decrypt."
+		user_decision = gets.chomp 
+	end
+end
