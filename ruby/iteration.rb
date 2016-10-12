@@ -13,3 +13,11 @@ end
 actors.each do |label,bio|
 	puts "This #{label} of this actor is #{bio}"
 end
+
+animals.map! do |animal|
+	puts animal
+	animal.next
+end
+
+puts "After .map call:"
+p animals
