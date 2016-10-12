@@ -21,3 +21,4 @@ end
 
 puts "After .map call:"
 p animals
+
