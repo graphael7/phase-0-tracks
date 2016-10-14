@@ -47,8 +47,27 @@ def aliass(real_name)
 	rreal_name
 end
 
+list_of_names = {
+names: [],
+aka:[]
+}
+begin
+	puts "What name would you like an alias for? (if none type quit)"
+	user_response = gets.chomp
+	
+	if user_response != "quit"
+		puts "your alias is " + aliass(user_response)
+		list_of_names[:names].push(user_response)
+		list_of_names[:aka].push(aliass(user_response))
+	end
 
+end while user_response != "quit" 
+length_of_array = list_of_names[:names].length
 
-puts aliass("Felicia Torres")
+for x in 0...length_of_array
+	puts
+	puts "#{list_of_names[:names][x]} is also known as #{list_of_names[:aka][x]}"
+end
+
 
 
