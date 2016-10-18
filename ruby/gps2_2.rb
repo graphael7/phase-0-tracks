@@ -73,3 +73,15 @@ end
 
 p print_list(grocery)
 	
+# What did you learn about pseudocode from working on this challenge?
+# I learned that I needed to make it in plain text and i need to practice it 
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# Arrays are simpler to change from a string but hashes make it easier to output and update content
+# What does a method return?
+# A method returns the updated grocery list 
+# What kind of things can you pass into methods as arguments?
+# You can pass methods, arrays, hashes, strings, intergers, floats, booleans
+# How can you pass information between methods?
+# The inputs for the method can be used to pass information
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# Using hashes were solidified in this challenge
