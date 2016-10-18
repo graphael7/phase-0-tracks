@@ -37,3 +37,23 @@ fido.speak(3)
 fido.roll_over 
 fido.dog_years(10)
 fido.dog_eat("steak")
+
+
+class SoccerPlayer
+
+	def initialize()
+		puts "new player"
+	end
+
+	def shooting_goal(shots_attempted)
+		puts "you tried to shoot at goal #{shots_attempted} times and you made #{shots_attempted/2}"
+	end
+
+	def assist(assist_count)
+		puts "you made #{assist_count} assist"
+	end
+end
+
+ronaldo = SoccerPlayer.new
+ronaldo.shooting_goal(6)
+ronaldo.assist(2)
