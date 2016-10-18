@@ -57,3 +57,16 @@ end
 ronaldo = SoccerPlayer.new
 ronaldo.shooting_goal(6)
 ronaldo.assist(2)
+
+players = []
+
+50.times do 
+
+players << newsoccerplayer = SoccerPlayer.new
+end
+players.each do |x| 
+x.assist(3)
+x.shooting_goal(4)
+end 
+
+
