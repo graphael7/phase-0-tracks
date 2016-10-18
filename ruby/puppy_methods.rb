@@ -1,5 +1,9 @@
 class Puppy
 
+  def initialize()
+ 	puts "initializing new pupy instance"
+  end
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
@@ -22,6 +26,8 @@ class Puppy
   def dog_eat(food)
   	puts "#{food} is so tasty"
   end
+
+ 
 
 end
 
