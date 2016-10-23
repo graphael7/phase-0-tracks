@@ -1,24 +1,19 @@
-require_relative 'list'
+require_relative 'word_guessing'
 
 
-describe TodoList do
-  let(:list) { TodoList.new(["do the dishes", "mow the lawn"]) }
+describe WordGuess do
+  let(:gib) {WordGuess.new}
 
-  it "stores the list items given on initialization" do
-    expect(list.get_items).to eq ["do the dishes", "mow the lawn"]
+  it "draws the appropriate lines" do
+    expect(gib.draw_line).to eq "_ _ _ _ "
   end
 
-  it "adds an item to the list" do
-    list.add_item("mop")
-    expect(list.get_items).to eq ["do the dishes", "mow the lawn", "mop"]
+  it "Check the guessed letter" do
+    expect(gib.check_letter("c")).to eq true
   end
 
-  it "deletes an item" do
-    list.delete_item("do the dishes")
-    expect(list.get_items).to eq ["mow the lawn"]
+  it "update lines with the correct letter" do
+    expect(gib.update_letter("c")).to eq "_ _ c _ " 
   end
 
-  it "retrieves an item by index" do
-    expect(list.get_item(0)).to eq "do the dishes"
-  end
 end
