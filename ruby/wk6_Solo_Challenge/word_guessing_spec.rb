@@ -13,6 +13,7 @@ describe WordGuess do
   end
 
   it "update lines with the correct letter" do
+    gib.draw_line
     expect(gib.update_letter("c")).to eq "_ _ c _ " 
   end
 

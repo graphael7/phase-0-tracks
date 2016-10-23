@@ -15,7 +15,7 @@
 # a method to update with correct letter
 
 class WordGuess
-	attr_accessor :secretword
+	attr_accessor :secretword, :drawn_line
 
 	def initialize
 		@secretword = "dice"
@@ -24,8 +24,11 @@ class WordGuess
 	end
 
 	def draw_line
-		@secretword.length.times do |x|
-			@drawn_line.insert(0,"_ ")			
+		numberoflines = @secretword.length * 2
+		numberoflines.times do |x|
+			if x.even?
+				@drawn_line.insert(x,"_ ")	
+			end				
 		end
 		@drawn_line
 	end
@@ -41,17 +44,37 @@ class WordGuess
 	end
 
 	def update_letter(updated_letter)
-		itsthere = @secretword.index(updated_letter)
-		x = 0
-		@drawn_line = ""
-		@secretword.length.times do |x|
-			if x != itsthere
-				@drawn_line.insert(-1,"_ ")			
-			else
-				@drawn_line.insert(-1, "#{updated_letter} ")
-			end
-		end
+		itsthere = @secretword.index(updated_letter) * 2
+		@drawn_line[itsthere] = "#{updated_letter}"
 		@drawn_line
 	end
 
+end
+
+user2 = WordGuess.new
+puts "User1 enter the secret word"
+user2.secretword = gets.chomp
+number_of_guesses = user2.secretword.length + user2.secretword.length/2
+num = 0
+correct_guesses = 0
+user2.draw_line
+while  num <= number_of_guesses
+	num += 1
+	if user2.secretword.length != correct_guesses
+		puts "User2 guess a letter in the word"
+		user2_guess = gets.chomp
+		if user2.check_letter(user2_guess)
+			puts "Correct guess"
+			correct_guesses += 1
+			puts user2.update_letter(user2_guess)
+		else
+			puts "Incorrect Guess"
+		end
+	end
+end
+
+if user2.secretword.length == correct_guesses
+	puts "You win!!!"
+else
+	puts "Sorry you have run out of guess"
 end
