@@ -36,6 +36,22 @@ function Match(testvalue1,testvalue2){
 	return false
 }
 
+function Listofwords(amount){
+	whole_list = [];
+	
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	for (var x = 0; x < amount; x++){
+		var text = "";
+		length = Math.floor(Math.random() * 9) + 1;
+		for( var i=0; i < length; i++ ){
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    	}
+    	whole_list.push(text);
+	}
+
+	return whole_list;
+}
+
 words = ["long phrase","longest phrase","longer phrase"];
 words1 = ["long phraseffhm","longehfmhfmst phrase","longer fhmhfphrase"];
 words2 = ["long hhphrase","longest phmrase","longerxfmmf phrase"];
@@ -56,3 +72,7 @@ entry6 = {name: "Tamir", age: 52}
 console.log(Match(entry1,entry2));
 console.log(Match(entry3,entry4));
 console.log(Match(entry5,entry6));
+
+console.log(Listofwords(3));
+console.log(Listofwords(7));
+console.log(Listofwords(13));
