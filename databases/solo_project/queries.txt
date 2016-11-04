@@ -1,0 +1,121 @@
+1)Display the information in one table (either table is fine).
+
+sqlite> select * from superheroes
+   ...> ;
+1|Hulk|Unlimited Strength|1
+2|Professor X|Psionic Powers|2
+3|Mr Fantastic|Elasticity|3
+4|Ironman|Superintelligence|1
+5|Black Widow|Martial Arts|1
+6|Captain America|Superhuman|1
+7|Wolverine|Super Healing|2
+8|Jean Grey|Telekinessis|2
+9|Thing|SuperStrength|3
+10|Invisible Woman|Invisibility|3
+
+2) Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> update superheroes set power="SuperSerum" where name="Captain America";
+sqlite> select * from superheroes;
+1|Hulk|Unlimited Strength|1
+2|Professor X|Psionic Powers|2
+3|Mr Fantastic|Elasticity|3
+4|Ironman|Superintelligence|1
+5|Black Widow|Martial Arts|1
+6|Captain America|SuperSerum|1
+7|Wolverine|Super Healing|2
+8|Jean Grey|Telekinessis|2
+9|Thing|SuperStrength|3
+10|Invisible Woman|Invisibility|3
+sqlite>
+
+3) Display the information in both tables using one query.
+
+sqlite> select * from superheroes, superhero_team where superheroes.superhero_team_id = superhero_team.id;
+1|Hulk|Unlimited Strength|1|1|Avengers
+2|Professor X|Psionic Powers|2|2|Xmen
+3|Mr Fantastic|Elasticity|3|3|Fantastic4
+4|Ironman|Superintelligence|1|1|Avengers
+5|Black Widow|Martial Arts|1|1|Avengers
+6|Captain America|SuperSerum|1|1|Avengers
+7|Wolverine|Super Healing|2|2|Xmen
+8|Jean Grey|Telekinessis|2|2|Xmen
+9|Thing|SuperStrength|3|3|Fantastic4
+10|Invisible Woman|Invisibility|3|3|Fantastic4
+sqlite>
+
+
+4) Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> select superheroes.power,superhero_team.team_name from superheroes join superhero_team on superheroes.superhero_team_id = superhero_team.id;
+Unlimited Strength|Avengers
+Psionic Powers|Xmen
+Elasticity|Fantastic4
+Superintelligence|Avengers
+Martial Arts|Avengers
+SuperSerum|Avengers
+Super Healing|Xmen
+Telekinessis|Xmen
+SuperStrength|Fantastic4
+Invisibility|Fantastic4
+sqlite>
+
+5) Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> delete from superheroes where name = "Mr Fantastic";
+sqlite> select * from superheroes
+   ...> ;
+1|Hulk|Unlimited Strength|1
+2|Professor X|Psionic Powers|2
+4|Ironman|Superintelligence|1
+5|Black Widow|Martial Arts|1
+6|Captain America|SuperSerum|1
+7|Wolverine|Super Healing|2
+8|Jean Grey|Telekinessis|2
+9|Thing|SuperStrength|3
+10|Invisible Woman|Invisibility|3
+sqlite>
+
+
+
+sqlite> select superheroes.name,superhero_team.team_name from superheroes left join superhero_team on superheroes.superhero_team_id = superhero_team.id;
+Hulk|Avengers
+Professor X|Xmen
+Ironman|Avengers
+Black Widow|Avengers
+Captain America|Avengers
+Wolverine|Xmen
+Jean Grey|Xmen
+Thing|Fantastic4
+Invisible Woman|Fantastic4
+sqlite>
+
+
+sqlite> select superheroes.name,superhero_team.team_name from superheroes cross join superhero_team on superheroes.superhero_team_id = superhero_team.id;
+Hulk|Avengers
+Professor X|Xmen
+Ironman|Avengers
+Black Widow|Avengers
+Captain America|Avengers
+Wolverine|Xmen
+Jean Grey|Xmen
+Thing|Fantastic4
+Invisible Woman|Fantastic4
+sqlite>
+
+sqlite> select superheroes.name, superheroes.power from superheroes order by superheroes.name asc;
+Black Widow|Martial Arts
+Captain America|SuperSerum
+Hulk|Unlimited Strength
+Invisible Woman|Invisibility
+Ironman|Superintelligence
+Jean Grey|Telekinessis
+Professor X|Psionic Powers
+Thing|SuperStrength
+Wolverine|Super Healing
+sqlite>
+
+
+
+
+
