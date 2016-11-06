@@ -31,6 +31,24 @@ begin
 		puts "How long did you workout for?"
 		time = gets.to_i
 		db.execute("INSERT INTO workouts (date,name,exercise,time) VALUES (?,?,?,?)", [user_date,user_name,exercise,time])
+	when "update"
+		puts "What workout workout would you like to update?"
+		update_exercise = gets.chomp
+		puts "What is the change of time?"
+		update_time = gets.to_i
+		db.execute("UPDATE workouts SET exercise = update_time WHERE exercise = update_exercise")
+	when "view"
+		view_diary = db.execute("SELECT * FROM workouts")
+		view_diary.each do |view_diary|
+			puts "#{view_diary['date'] view_diary['name'] view_diary['exercise'] view_diary['time']}"
+		end
+	when "delete"
+		puts "What workout workout would you like to delete?"
+		delete_exercise = gets.chomp
+		db.execute("DELETE FROM workouts WHERE exercise = delete_exercise")
+	else
+		puts "Incorrect Input!"
+	end
 
 puts "Would you like to continue (yes/no)"
 user_answer = gets.chomp
