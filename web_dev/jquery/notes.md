@@ -1,0 +1,2 @@
+I will google different jquery guides to try and find examples of projects that I like. Once I have gone through 5 to 10 examples that seem interesting I will research what each command does to give myself a good idea of what to expect from each command.
+I will then practice putting in command and seeing what happens from each command.
